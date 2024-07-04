@@ -135,7 +135,10 @@ def main():
     print("Fetching records from Airtable...")
     records = get_airtable_records(airtable_api_key, base_id, source_table_name)
     print(f"Fetched {len(records)} records from Airtable.")
-
+    
+    filtered_records = [record for record in records if 'a' <= record['id'][-1] <= 'm']
+    print(f"Filtered to {len(filtered_records)} records based on ID condition.")
+    
     for record in records:
         fields = record.get('fields', {})
         github_url = fields.get('GitHub', '')

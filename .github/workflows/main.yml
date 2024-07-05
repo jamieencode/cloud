@@ -2,7 +2,7 @@ name: Run GitHub Email Scraper
 
 on:
   schedule:
-    - cron: '*/6 * * * *' 
+    - cron: '*/60000 * * * *' 
   workflow_dispatch: # Allows manual trigger from GitHub Actions
 
 jobs:
